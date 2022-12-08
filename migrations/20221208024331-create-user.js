@@ -18,9 +18,6 @@ module.exports = {
       password: {
         type: Sequelize.STRING,
       },
-      isLogin: {
-        type: Sequelize.BOOLEAN,
-      },
       money: {
         type: Sequelize.INTEGER,
       },

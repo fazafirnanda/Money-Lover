@@ -12,6 +12,13 @@ module.exports = (sequelize, DataTypes) => {
       Post.belongsTo(models.User);
       Post.belongsTo(models.Category);
     }
+    static formatForDate(date) {
+      return date.toLocaleDateString("en-CA");
+    }
+
+    formatDate() {
+      return this.date.toLocaleDateString("id");
+    }
   }
   Post.init(
     {
@@ -55,9 +62,9 @@ module.exports = (sequelize, DataTypes) => {
       modelName: "Post",
     }
   );
-  Post.beforeCreate((intances) => {
-    intances.amount = 0;
-  });
+  // Post.beforeCreate((intances) => {
+  //   intances.amount = 0;
+  // });
 
   return Post;
 };

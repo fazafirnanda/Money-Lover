@@ -29,13 +29,6 @@ module.exports = {
           key: "id",
         },
       },
-      DateId: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: "Dates",
-          key: "id",
-        },
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

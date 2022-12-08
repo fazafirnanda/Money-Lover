@@ -14,7 +14,7 @@
     </style>
 </head>
 <body class="bg-gray-200">
-    <div class="fixed h-full l-0 z-20 bg-white w-20 shadow-lg border-r">
+    <div class="fixed h-full top-0 l-0 z-20 bg-white w-20 shadow-lg border-r">
         <div class="w-full h-20 p-7">
             <a href="" class="h-full w-full">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list w-full h-full" viewBox="0 0 16 16"> 
@@ -45,7 +45,7 @@
             <p class="text-xs -translate-x-2 mt-1 text-slate-700">Money</p>
         </div>
     </div>
-    <nav class="fixed w-full bg-white h-16 border-b-1 border-black">
+    <nav class="fixed w-full top-0 bg-white h-16 border-b-1 border-black">
         <div class="ml-24 flex justify-between items-center mr-5 h-full">
             <div class="flex gap-x-3">
                 <div class="h-10 w-10">
@@ -55,7 +55,7 @@
                 </div>
                 <div class="">
                     <p>Money</p>
-                    <p>Rp. 70000</p>
+                    <p><%= convertRupiah(data.money) %></p>
                 </div>
             </div>
             <div class="flex gap-x-4 h-full items-center">
@@ -81,16 +81,54 @@
                 <div class="py-1 px-3 bg-green-700 text-white rounded-lg">
                     <a href="/addPost">Add Transaction</a>
                 </div>
-                <div class="flex gap-x-3">
+                <% if(!isLogin){ %>
+                    <div class="flex gap-x-3">
                     <p>
-                        <a href="/login">Register</a>
+                        <a href="/register">Register</a>
                     </p>
                     <p>
-                        <a href="/register">Login</a>
+                        <a href="/login">Login</a>
                     </p>
                 </div>
+                <% }else{ %>
+                    <div>
+                        <p>
+                            <a href="/logout">Logout</a>
+                        </p>
+                    </div>
+                <%  } %> 
+            
             </div>
         </div>
     </nav>
+    <div class="mx-44 my-32 bg-white p-4">
+        <table class="border-1 w-full">
+            <thead>
+                <tr class="border border-black">
+                    <th class="border border-black">Category</th>
+                    <th class="border border-black">Title</th>
+                    <th class="border border-black">Type</th>
+                    <th class="border border-black">Date</th>
+                    <th class="border border-black">Amount</th>
+                    <th class="border border-black">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% result.map(el => { %>
+                    <tr>
+                        <th><%= el.Category.title %></th>
+                        <th><%= el.title %></th>
+                        <th><%= el.Category.type %></th>
+                        <th><%= el.formatDate()%></th>
+                        <th><%= el.amount %></th>
+                        <th>
+                            <a href="/delete/<%= el.id %>">Delete</a>
+                            <a href="/edit/<%= el.id %>">Edit</a>
+                        </th>
+                    </tr>
+                <% }) %> 
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

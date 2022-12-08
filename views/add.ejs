@@ -56,7 +56,7 @@
                 </div>
                 <div class="">
                     <p>Money</p>
-                    <p>Rp. 70000</p>
+                    <p><%= convertRupiah(data.money) %></p>
                 </div>
             </div>
             <div class="flex gap-x-4 h-full items-center">
@@ -76,14 +76,6 @@
                     </a>
                       
                 </div>
-                <div class="flex gap-x-3">
-                    <p>
-                        <a href="/login">Register</a>
-                    </p>
-                    <p>
-                        <a href="/register">Login</a>
-                    </p>
-                </div>
             </div>
         </div>
     </nav>
@@ -95,15 +87,18 @@
             <div class="w-full relative">
                 <form action="/addPost" method="post">
                     <label for="">Title</label>
-                    <input type="text" name="" class="w-full border">
+                    <input type="text" name="title" class="w-full border">
                     <br>
                     <label for="">Category</label>
-                    <select name="" id="" class="w-full border">
+                    <select name="CategoryId" id="" class="w-full border">
                         <option value="" selected disabled>-- SELECT HERE --</option>
                         <% result.map(el => { %>
                             <option value="<%= el.id %>"><%= el.title %></option>
                         <% }) %> 
                     </select>
+                    <br>
+                    <label for="">Price</label>
+                    <input type="text" name="amount" class="w-full border">
                     <br>
                     <label for="">Description</label>
                     <textarea name="description" id="" cols="30" rows="10" class="w-full border"></textarea>
@@ -116,6 +111,11 @@
                         </div>
                     </div>
                 </form>
+                <% if(error){ %>
+                    <% error.split(",").forEach(el => { %>
+                        <p class="text-red-700"><%= el %></p>
+                    <% }) %>
+                <% } %>
             </div>
         </div>
     </div>
