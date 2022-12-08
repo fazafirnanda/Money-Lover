@@ -3,12 +3,13 @@ const Controller = require("../controllers/controller");
 const router = express.Router();
 const transactions = require("./transactions");
 
-router.get("/", Controller.home);
-// router.get("/register",Controller);
-// router.post("/register", Controller);
-// router.get("/login");
+router.get("/", Controller.home );
+router.get('/login', Controller.getLogin )
+router.post('/login', Controller.postLogin )
+router.get('/register', Controller.getRegister )
+router.post('/register', Controller.postRegister )
 router.use("/transactions", transactions);
 router.use("/addPost/:userId", Controller.addPost);
 //router.post("/addPost/:id", Controller.postAdd);
-// test auuu
+
 module.exports = router;
