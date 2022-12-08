@@ -1,0 +1,58 @@
+[
+    {
+        "title": "Makanan & Minuman",
+        "type" : "Pengeluaran"
+    },
+    {
+        "title": "Gaji Masuk",
+        "type" : "Pemasukkan"
+    },
+    {
+        "title": "Transportasi",
+        "type" : "Pengeluaran"
+    },
+    {
+        "title": "Sewa",
+        "type" : "Pengeluaran"
+    },
+    {
+        "title": "Pemasukkan lainnya",
+        "type" : "Pemasukkan"
+    },
+    {
+        "title" : "Transfer Masuk",
+        "type" : "Pemasukkan"
+    },
+    {
+        "title" : "Transfer Keluar",
+        "type" : "Pengeluaran"
+    },
+    {
+        "title" : "Keperluan Anak",
+        "type" : "Pengeluaran"
+    },
+    {
+        "title" : "Tagihan Air",
+        "type" : "Pengeluaran"
+    },
+    {
+        "title" : "Pemeriksaan Kesehatan",
+        "type" : "Pengeluaran"
+    },
+    {
+        "title" : "Asuransi",
+        "type" : "Pengeluaran"
+    },
+    {
+        "title" : "Hewan Peliharaan",
+        "type" : "Pengeluaran"
+    },
+    {
+        "title" : "Pendidikan",
+        "type" : "Pengeluaran"
+    },
+    {
+        "title" : "Peralatan Rumah Tangga",
+        "type" : "Pengeluaran"
+    }
+]
