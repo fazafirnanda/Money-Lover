@@ -4,13 +4,13 @@ const router = express.Router();
 const dashRoute = require("./dashboard");
 const postRoute = require("./posts");
 
-router.get("/", (req, res) => {
-  res.send("hello world");
-});
-// router.get("/register",Controller);
-// router.post("/register", Controller);
-// router.get("/login");
-// router.use("/dashboard", dashRoute);
-// router.use("posts", postRoute);
+router.get("/", Controller.home );
+router.get('/login', Controller.getLogin )
+router.post('/login', Controller.postLogin )
+router.get('/register', Controller.getRegister )
+router.post('/register', Controller.postRegister )
+router.use("/dashboard", dashRoute);
+router.use("posts", postRoute);
+
 
 module.exports = router;
