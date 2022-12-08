@@ -10,5 +10,5 @@ router.get("/", Controller.home);
 router.use("/transactions", transactions);
 router.use("/addPost/:userId", Controller.addPost);
 //router.post("/addPost/:id", Controller.postAdd);
-
+// test auuu
 module.exports = router;
