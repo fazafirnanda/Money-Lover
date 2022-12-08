@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,8 +14,8 @@
         }
     </style>
 </head>
-<body class="bg-gray-200">
-    <div class="fixed h-full l-0 z-20 bg-white w-20 shadow-lg border-r">
+<body class="bg-gray-200 ">
+    <div class="fixed h-full top-0 l-0 z-20 bg-white w-20 shadow-lg border-r">
         <div class="w-full h-20 p-7">
             <a href="" class="h-full w-full">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list w-full h-full" viewBox="0 0 16 16"> 
@@ -45,7 +46,7 @@
             <p class="text-xs -translate-x-2 mt-1 text-slate-700">Money</p>
         </div>
     </div>
-    <nav class="fixed w-full bg-white h-16 border-b-1 border-black">
+    <nav class="fixed top-0 w-full bg-white h-16 border-b-1 border-black">
         <div class="ml-24 flex justify-between items-center mr-5 h-full">
             <div class="flex gap-x-3">
                 <div class="h-10 w-10">
@@ -75,12 +76,6 @@
                     </a>
                       
                 </div>
-                <div>
-
-                </div>
-                <div class="py-1 px-3 bg-green-700 text-white rounded-lg">
-                    <a href="/addPost">Add Transaction</a>
-                </div>
                 <div class="flex gap-x-3">
                     <p>
                         <a href="/login">Register</a>
@@ -92,5 +87,37 @@
             </div>
         </div>
     </nav>
+    <div class="mx-64 py-7 px-10 bg-white text-black my-24">
+        <div class="w-full">
+            <div class="w-full py-4">
+                <h1 class="text-2xl">Add transaction</h1>
+            </div>
+            <div class="w-full relative">
+                <form action="/addPost" method="post">
+                    <label for="">Title</label>
+                    <input type="text" name="" class="w-full border">
+                    <br>
+                    <label for="">Category</label>
+                    <select name="" id="" class="w-full border">
+                        <option value="" selected disabled>-- SELECT HERE --</option>
+                        <% result.map(el => { %>
+                            <option value="<%= el.id %>"><%= el.title %></option>
+                        <% }) %> 
+                    </select>
+                    <br>
+                    <label for="">Description</label>
+                    <textarea name="description" id="" cols="30" rows="10" class="w-full border"></textarea>
+                    <br>
+                    <label for="">Date</label>
+                    <input type="date" class="w-full border px-3" name="date">
+                    <div class="w-full flex justify-end">
+                        <div class="p-3 rounded-lg border bg-slate-200 mt-4">
+                            <button type="submit" class="text-green-700">Add transaction</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

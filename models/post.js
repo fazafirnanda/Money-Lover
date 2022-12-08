@@ -11,21 +11,53 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Post.belongsTo(models.User);
       Post.belongsTo(models.Category);
-      Post.belongsTo(models.Date);
     }
   }
   Post.init(
     {
-      title: DataTypes.STRING,
-      description: DataTypes.STRING,
+      title: {
+        type: DataTypes.STRING,
+        validate: {
+          notEmpty: {
+            msg: "Title Harus Diisi",
+          },
+        },
+      },
+      description: {
+        type: DataTypes.STRING,
+        validate: {
+          notEmpty: {
+            msg: "Deskripsi Harus Diisi",
+          },
+        },
+      },
       UserId: DataTypes.INTEGER,
-      CategoryId: DataTypes.INTEGER,
-      DateId: DataTypes.INTEGER,
+      CategoryId: {
+        type: DataTypes.INTEGER,
+        validate: {
+          notEmpty: {
+            msg: "Nama Kategori Harus Diisi",
+          },
+        },
+      },
+      amount: DataTypes.INTEGER,
+      date: {
+        type: DataTypes.DATE,
+        validate: {
+          notEmpty: {
+            msg: "Tanggal Harus Diisi",
+          },
+        },
+      },
     },
     {
       sequelize,
       modelName: "Post",
     }
   );
+  Post.beforeCreate((intances) => {
+    intances.amount = 0;
+  });
+
   return Post;
 };

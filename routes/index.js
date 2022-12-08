@@ -1,16 +1,14 @@
 const express = require("express");
 const Controller = require("../controllers/controller");
 const router = express.Router();
-const dashRoute = require("./dashboard");
-const postRoute = require("./posts");
+const transactions = require("./transactions");
 
-router.get("/", (req, res) => {
-  res.send("hello world");
-});
+router.get("/", Controller.home);
 // router.get("/register",Controller);
 // router.post("/register", Controller);
 // router.get("/login");
-// router.use("/dashboard", dashRoute);
-// router.use("posts", postRoute);
+router.use("/transactions", transactions);
+router.use("/addPost/:userId", Controller.addPost);
+//router.post("/addPost/:id", Controller.postAdd);
 
 module.exports = router;
