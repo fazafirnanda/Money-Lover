@@ -6,12 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-    </style>
 </head>
 <body class="bg-gray-200">
     <div class="fixed h-full l-0 z-20 bg-white w-20 shadow-lg border-r">
@@ -27,25 +21,26 @@
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a2.25 2.25 0 00-2.25-2.25H15a3 3 0 11-6 0H5.25A2.25 2.25 0 003 12m18 0v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6m18 0V9M3 12V9m18 0a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 9m18 0V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v3" />
             </svg>   
-            </a>            
-            <p class="text-xs -translate-x-6 mt-1 text-slate-700">Transactions</p>        
+            </a>    
+            <p class="text-xs -translate-x-6 mt-1 text-slate-700">Transactions</p>               
         </div>
         <div class="w-full h-20 p-7">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 3.75V16.5L12 14.25 7.5 16.5V3.75m9 0H18A2.25 2.25 0 0120.25 6v12A2.25 2.25 0 0118 20.25H6A2.25 2.25 0 013.75 18V6A2.25 2.25 0 016 3.75h1.5m9 0h-9" />
-          </svg>
-          <p class="text-xs -translate-x-2 mt-1 text-slate-700">Report</p>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 3.75V16.5L12 14.25 7.5 16.5V3.75m9 0H18A2.25 2.25 0 0120.25 6v12A2.25 2.25 0 0118 20.25H6A2.25 2.25 0 013.75 18V6A2.25 2.25 0 016 3.75h1.5m9 0h-9" />
+            </svg>     
+            <p class="text-xs -translate-x-2 mt-1 text-slate-700">Report</p>
         </div>   
         <div class="w-full h-20 p-7">
             <a href="/money">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"     stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
                 </svg>
-            </a>
+                
+            </a>      
             <p class="text-xs -translate-x-2 mt-1 text-slate-700">Money</p>
         </div>
     </div>
-    <nav class="fixed w-full bg-white h-16 border-b-1 border-black">
+    <nav class="fixed w-full bg-white shadow-xs h-16">
         <div class="ml-24 flex justify-between items-center mr-5 h-full">
             <div class="flex gap-x-3">
                 <div class="h-10 w-10">
@@ -59,13 +54,15 @@
                 </div>
             </div>
             <div class="flex gap-x-4 h-full items-center">
-                
                 <div>
-                    <a href="/transactions/category">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
-                          </svg>                          
-                    </a>
+                    <form action="" method="get" class="flex gap-x-2">
+                        <button><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                          </svg></button>
+                        <div class="border rounded-xl overflow-hidden px-3">
+                        <input type="text" class="focus:outline-none">
+                        </div>
+                    </form>
                 </div>
                 <div>
                     <a href="/transactions/date">
@@ -75,22 +72,9 @@
                     </a>
                       
                 </div>
-                <div>
-
-                </div>
-                <div class="py-1 px-3 bg-green-700 text-white rounded-lg">
-                    <a href="/addPost">Add Transaction</a>
-                </div>
-                <div class="flex gap-x-3">
-                    <p>
-                        <a href="/login">Register</a>
-                    </p>
-                    <p>
-                        <a href="/register">Login</a>
-                    </p>
-                </div>
             </div>
         </div>
     </nav>
+
 </body>
 </html>
