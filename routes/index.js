@@ -10,5 +10,6 @@ router.get('/register', Controller.getRegister )
 router.post('/register', Controller.postRegister )
 router.use("/transactions", transactions);
 router.use("/addPost/:userId", Controller.addPost);
+//router.post("/addPost/:id", Controller.postAdd);
 
 module.exports = router;
