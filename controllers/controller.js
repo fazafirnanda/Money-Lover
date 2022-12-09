@@ -66,10 +66,8 @@ class Controller {
   }
   static postEdit(req, res) {
     const { title, CategoryId, amount, description, date } = req.body;
-    console.log(req.body);
     const { postId } = req.params;
-    console.log(req.params);
-    User.update(
+    Post.update(
       { title, CategoryId: +CategoryId, amount: +amount, description, date },
       {
         where: {
@@ -160,8 +158,66 @@ class Controller {
   static postAdd(req, res) {
     const { title, description, CategoryId, date, amount } = req.body;
     const UserId = req.session.user.id;
-    Post.create({ title, description, CategoryId, date, amount, UserId })
+    let money;
+    let temp;
+    User.findByPk(UserId)
       .then((result) => {
+        money = result.money;
+        return Category.findByPk(CategoryId);
+      })
+      .then((category) => {
+        if (category.type === "Pemasukkan" && +amount > 0) {
+          temp = true;
+          return Post.create({
+            title,
+            description,
+            CategoryId,
+            date,
+            amount,
+            UserId,
+          });
+        } else {
+          if (+amount > money) {
+            res.send(error);
+          } else {
+            temp = false;
+            return Post.create({
+              title,
+              description,
+              CategoryId,
+              date,
+              amount,
+              UserId,
+            });
+          }
+        }
+      })
+      .then((data) => {
+        if (temp) {
+          return User.update(
+            {
+              money: money + data.amount,
+            },
+            {
+              where: {
+                id: +UserId,
+              },
+            }
+          );
+        } else {
+          return User.update(
+            {
+              money: money - data.amount,
+            },
+            {
+              where: {
+                id: +UserId,
+              },
+            }
+          );
+        }
+      })
+      .then((data) => {
         res.redirect("/");
       })
       .catch((err) => {
@@ -174,6 +230,21 @@ class Controller {
           res.send(err);
         }
       });
+
+    // Post.create({ title, description, CategoryId, date, amount, UserId })
+    //   .then((result) => {
+    //     res.redirect("/");
+    //   })
+    //   .catch((err) => {
+    //     if (err.name == "SequelizeValidationError") {
+    //       let errors = err.errors.map((el) => {
+    //         return el.message;
+    //       });
+    //       res.redirect(`/addPost?error=${errors}`);
+    //     } else {
+    //       res.send(err);
+    //     }
+    //   });
   }
 
   static getLogin(req, res) {

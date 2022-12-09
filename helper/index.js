@@ -5,4 +5,6 @@ const rupiah = (number) => {
   }).format(number);
 };
 
+const condition = () => {};
+
 module.exports = rupiah;
